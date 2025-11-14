@@ -35,7 +35,7 @@ function concatenateStrings(arr) {
 }
 
 const CustomElement: FC<Props> = ({ conversation }) => {
-  console.log("👉 conversation main data ->", conversation);
+  // console.log("👉 conversation main data ->", conversation);
   // conversation is received as json string
   const [conversationData, setConversationData] = useState(conversation);
   const [inputValue, setInputValue] = useState("");
@@ -56,7 +56,7 @@ const CustomElement: FC<Props> = ({ conversation }) => {
   }, [conversation]);
 
   if (!conversationData) {
-    return <p>No conversation data received yet!</p>;
+    return <h2>Loading...</h2>;
   }
 
   const {
@@ -125,8 +125,8 @@ const CustomElement: FC<Props> = ({ conversation }) => {
       background: "#e5ddd5",
       display: "flex",
       justifyContent: "center",
-      alignItems: "center",
-      minHeight: "100vh",
+      alignItems: "flex-start",
+      minHeight: "80vh",
       padding: "20px",
     },
     chatContainer: {
