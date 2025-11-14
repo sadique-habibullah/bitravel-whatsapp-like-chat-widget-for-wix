@@ -1,0 +1,22 @@
+{
+  "$schema": "https://dev.wix.com/wix-cli/schemas/custom-element.json",
+  "id": "03f6960a-af9f-4c25-9565-48da92a88d35",
+  "name": "bitravel-whatsapp-chat-widget",
+  "width": {
+    "defaultWidth": 450,
+    "allowStretch": true
+  },
+  "height": {
+    "defaultHeight": 250
+  },
+  "installation": {
+    "autoAddToSite": true
+  },
+  "presets": [
+    {
+      "id": "31ee94d6-39b0-4baa-8ac7-6cc374bb4a72",
+      "thumbnailUrl": "../../../../assets/bitravel-whatsapp-chat-widget/thumbnail.png"
+    }
+  ]
+}
+

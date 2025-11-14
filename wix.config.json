@@ -1,0 +1,5 @@
+{
+  "$schema": "https://dev.wix.com/wix-cli/schemas/wix-config.json",
+  "appId": "65eadd6b-3140-4fb5-a6e8-eecb028050de",
+  "projectId": "bitravel-whatsapp-chat-widget"
+}
