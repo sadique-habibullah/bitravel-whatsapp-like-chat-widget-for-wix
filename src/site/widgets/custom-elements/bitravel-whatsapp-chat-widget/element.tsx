@@ -1,21 +1,22 @@
-import React, { useEffect, useState, type FC } from "react";
+import React, { useEffect, useState, useRef, type FC } from "react";
 import ReactDOM from "react-dom";
 import reactToWebComponent from "react-to-webcomponent";
 // import styles from './element.module.css';
 
 interface Props {
   // displayName?: string;
-  conversation?: string;
+  conversations?: string;
 }
 
-function generateId(length = 16) {
-  const chars =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-  let id = "";
-  for (let i = 0; i < length; i++) {
-    id += chars.charAt(Math.floor(Math.random() * chars.length));
-  }
-  return id;
+function generateId(timestamp, status) {
+  return `${timestamp}-${status}`;
+  // const chars =
+  //   "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  // let id = "";
+  // for (let i = 0; i < length; i++) {
+  //   id += chars.charAt(Math.floor(Math.random() * chars.length));
+  // }
+  // return id;
 }
 
 // function addIdsToObjects(arr) {
@@ -34,11 +35,12 @@ function concatenateStrings(arr) {
   return result;
 }
 
-const CustomElement: FC<Props> = ({ conversation }) => {
-  // console.log("👉 conversation main data ->", conversation);
+const CustomElement: FC<Props> = ({ conversations }) => {
+  // console.log("👉 conversation main data ->", conversations);
   // conversation is received as json string
-  const [conversationData, setConversationData] = useState(conversation);
+  const [conversationData, setConversationData] = useState(conversations);
   const [inputValue, setInputValue] = useState("");
+  const isFirstRender = useRef(true);
 
   const handleSend = () => {
     console.log("Sending message:", inputValue);
@@ -48,12 +50,19 @@ const CustomElement: FC<Props> = ({ conversation }) => {
 
   useEffect(() => {
     // console.log("conversation data received ->", conversationData);
-    setConversationData(conversation);
+    setConversationData(conversations);
     // if (conversationData) {
     //   setData(JSON.parse(conversationData));
     // }
     // console.log("data inside useEffect ->", data);
-  }, [conversation]);
+    // check how the rendering works in custom element
+    if (isFirstRender.current) {
+      console.log("First render");
+      isFirstRender.current = false;
+    } else {
+      console.log("Subsequent render");
+    }
+  }, [conversations]);
 
   if (!conversationData) {
     return <h2>Loading...</h2>;
@@ -62,7 +71,7 @@ const CustomElement: FC<Props> = ({ conversation }) => {
   const {
     assistant_name,
     first_name,
-    conversation: chat,
+    conversations: chat,
   } = JSON.parse(conversationData);
 
   console.log("👉👉👉👉", assistant_name, first_name, chat);
@@ -71,13 +80,13 @@ const CustomElement: FC<Props> = ({ conversation }) => {
     console.log("👉 conversation item ->>", item);
     return [
       {
-        // id: generateId(),
+        id: generateId(item.timestamp, "sent"),
         type: "sent",
         text: item.user,
         timestamp: item.timestamp,
       },
       {
-        // id: generateId(),
+        id: generateId(item.timestamp, "received"),
         type: "received",
         text: Array.isArray(item.assistant)
           ? concatenateStrings(item.assistant[0].text)
@@ -323,8 +332,8 @@ const CustomElement: FC<Props> = ({ conversation }) => {
         <div style={styles.messagesContainer}>
           {newConversations.map((message) => (
             <div
-              // key={message.id}
-              key={message.text}
+              key={message.id}
+              // key={message.text}
               style={
                 message.type === "sent" ? styles.messageSent : styles.message
               }
@@ -392,7 +401,7 @@ const customElement = reactToWebComponent(
   ReactDOM as any,
   {
     props: {
-      conversation: "string",
+      conversations: "string",
     },
   }
 );
