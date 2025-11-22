@@ -72,9 +72,11 @@ const CustomElement: FC<Props> = ({ conversations }) => {
     assistant_name,
     first_name,
     conversations: chat,
+    customerPhoto,
+    agentPicture,
   } = JSON.parse(conversationData);
 
-  console.log("👉👉👉👉", assistant_name, first_name, chat);
+  console.log("👉👉👉👉", assistant_name, first_name, chat, agentPicture);
 
   const allConversations = chat.map((item) => {
     console.log("👉 conversation item ->>", item);
@@ -219,6 +221,12 @@ const CustomElement: FC<Props> = ({ conversations }) => {
       background: "#ccc",
       flexShrink: 0,
     },
+    photo: {
+      width: "36px",
+      height: "36px",
+      borderRadius: "50%",
+      objectFit: "cover",
+    },
     messageContent: {
       maxWidth: "75%",
     },
@@ -317,7 +325,13 @@ const CustomElement: FC<Props> = ({ conversations }) => {
       <div style={styles.chatContainer}>
         <div style={styles.header}>
           <div style={styles.headerLeft}>
-            <div style={styles.avatar}>BR</div>
+            <div style={styles.avatar}>
+              <img
+                style={styles.photo}
+                src={customerPhoto}
+                alt="customer photo"
+              />
+            </div>
             <div>
               <h3 style={styles.headerTitle}>{first_name}</h3>
               <p style={styles.headerSubtitle}>
@@ -338,7 +352,13 @@ const CustomElement: FC<Props> = ({ conversations }) => {
                 message.type === "sent" ? styles.messageSent : styles.message
               }
             >
-              <div style={styles.messageAvatar}></div>
+              <div style={styles.messageAvatar}>
+                <img
+                  style={styles.photo}
+                  src={message.type === "sent" ? customerPhoto : agentPicture}
+                  alt="customer photo"
+                />
+              </div>
 
               {message.isMenu ? (
                 <div style={styles.menuDots}>⋯</div>
