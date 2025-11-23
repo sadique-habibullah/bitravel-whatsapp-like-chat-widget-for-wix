@@ -1,0 +1,148 @@
+/* CONTAINER */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #f8f8f8;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e3e3e3;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid #e5e5e5;
+  background: white;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  animation: shimmer 1.5s infinite linear;
+  background: #ddd;
+}
+
+.small {
+  width: 32px;
+  height: 32px;
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* LINES */
+.line {
+  height: 12px;
+  border-radius: 6px;
+  animation: shimmer 1.5s infinite linear;
+  background-image: linear-gradient(
+    90deg,
+    #d9d9d9 0%,
+    #ececec 50%,
+    #d9d9d9 100%
+  );
+  background-size: 400px 100%;
+}
+
+.short {
+  width: 120px;
+}
+
+.tiny {
+  width: 70px;
+}
+
+.long {
+  width: 150px;
+}
+
+.medium {
+  width: 100px;
+}
+
+/* MESSAGES */
+.messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.messageBlock {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.received {
+  flex-direction: row;
+}
+
+.sent {
+  flex-direction: row-reverse;
+}
+
+/* CHAT BUBBLE */
+.bubble {
+  background: #eaeaea;
+  border-radius: 14px;
+  padding: 12px;
+  max-width: 60%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+/* INPUT BAR */
+.input {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-top: 1px solid #e5e5e5;
+  background: white;
+}
+
+.inputLine {
+  flex: 1;
+  height: 40px;
+  border-radius: 20px;
+  animation: shimmer 1.5s infinite linear;
+  background-image: linear-gradient(
+    90deg,
+    #d9d9d9 0%,
+    #ececec 50%,
+    #d9d9d9 100%
+  );
+  background-size: 400px 100%;
+}
+
+.sendButton {
+  width: 60px;
+  height: 40px;
+  border-radius: 12px;
+  animation: shimmer 1.5s infinite linear;
+  background-image: linear-gradient(
+    90deg,
+    #d9d9d9 0%,
+    #ececec 50%,
+    #d9d9d9 100%
+  );
+  background-size: 400px 100%;
+}
+
+/* SHIMMER */
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}

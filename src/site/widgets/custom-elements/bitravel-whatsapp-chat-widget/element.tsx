@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useRef, type FC } from "react";
 import ReactDOM from "react-dom";
 import reactToWebComponent from "react-to-webcomponent";
+import ChatSkeleton from "./components/ChatSkeleton/ChatSkeleton";
 // import styles from './element.module.css';
-
 interface Props {
   // displayName?: string;
   conversations?: string;
@@ -118,7 +118,7 @@ const CustomElement: FC<Props> = ({ conversations }) => {
   }, [conversations]);
 
   if (!conversationData) {
-    return <h2>Loading...</h2>;
+    return <ChatSkeleton />;
   }
 
   const {
