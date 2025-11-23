@@ -8,6 +8,59 @@ interface Props {
   conversations?: string;
 }
 
+function formatDate(input) {
+  const date = new Date(input);
+  const now = new Date();
+
+  const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  // --- Helper: get start of week (Monday as first day) ---
+  function getStartOfWeek(d) {
+    const dateCopy = new Date(d);
+    const day = dateCopy.getDay();
+    const diff = dateCopy.getDate() - day + (day === 0 ? -6 : 1);
+    return new Date(dateCopy.setDate(diff));
+  }
+
+  const startOfThisWeek = getStartOfWeek(now);
+
+  const isSameWeek = date >= startOfThisWeek;
+  const isSameYear = date.getFullYear() === now.getFullYear();
+
+  const time = date.toLocaleTimeString("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  });
+
+  // 1️⃣ If it’s this week → "Wed, 22:03"
+  if (isSameWeek && isSameYear) {
+    return `${daysOfWeek[date.getDay()]}, ${time}`;
+  }
+
+  // 2️⃣ Same year, not same week → "Jan 1, 22:03"
+  if (isSameYear) {
+    return `${months[date.getMonth()]} ${date.getDate()}, ${time}`;
+  }
+
+  // 3️⃣ Different year → "Jan 1, 2024"
+  return `${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
+}
+
 function generateId(timestamp, status) {
   return `${timestamp}-${status}`;
   // const chars =
@@ -40,10 +93,10 @@ const CustomElement: FC<Props> = ({ conversations }) => {
   // conversation is received as json string
   const [conversationData, setConversationData] = useState(conversations);
   const [inputValue, setInputValue] = useState("");
-  const isFirstRender = useRef(true);
+  // const isFirstRender = useRef(true);
 
   const handleSend = () => {
-    console.log("Sending message:", inputValue);
+    // console.log("Sending message:", inputValue);
   };
 
   // console.log("data outside of useEffect ->", data);
@@ -56,12 +109,12 @@ const CustomElement: FC<Props> = ({ conversations }) => {
     // }
     // console.log("data inside useEffect ->", data);
     // check how the rendering works in custom element
-    if (isFirstRender.current) {
-      console.log("First render");
-      isFirstRender.current = false;
-    } else {
-      console.log("Subsequent render");
-    }
+    // if (isFirstRender.current) {
+    //   console.log("First render");
+    //   isFirstRender.current = false;
+    // } else {
+    //   console.log("Subsequent render");
+    // }
   }, [conversations]);
 
   if (!conversationData) {
@@ -76,7 +129,7 @@ const CustomElement: FC<Props> = ({ conversations }) => {
     agentPicture,
   } = JSON.parse(conversationData);
 
-  console.log("👉👉👉👉", assistant_name, first_name, chat, agentPicture);
+  // console.log("👉👉👉👉", assistant_name, first_name, chat, agentPicture);
 
   const allConversations = chat.map((item) => {
     console.log("👉 conversation item ->>", item);
@@ -97,10 +150,10 @@ const CustomElement: FC<Props> = ({ conversations }) => {
       },
     ];
   });
-  console.log("allConversations ->", allConversations);
+  // console.log("allConversations ->", allConversations);
 
   const newConversations = [].concat(...allConversations);
-  console.log("newConversations ->", newConversations);
+  // console.log("newConversations ->", newConversations);
 
   // const data2 = {
   //   assistant_name: "Bob",
@@ -236,6 +289,9 @@ const CustomElement: FC<Props> = ({ conversations }) => {
       fontSize: "14px",
       lineHeight: "1.4",
       background: "white",
+      wordWrap: "break-word",
+      whiteSpace: "pre-wrap",
+      overflowWrap: "break-word",
     },
     messageBubbleSent: {
       padding: "10px 14px",
@@ -243,6 +299,9 @@ const CustomElement: FC<Props> = ({ conversations }) => {
       fontSize: "14px",
       lineHeight: "1.4",
       background: "#dcf8c6",
+      wordWrap: "break-word",
+      whiteSpace: "pre-wrap",
+      overflowWrap: "break-word",
     },
     messageTime: {
       fontSize: "11px",
@@ -379,10 +438,10 @@ const CustomElement: FC<Props> = ({ conversations }) => {
                       textAlign: message.type === "sent" ? "right" : "left",
                     }}
                   >
-                    {message.time}
-                    {message.type === "sent" && (
+                    {formatDate(message.timestamp)}
+                    {/*{message.type === "sent" && (
                       <span style={{ color: "#4fc3f7" }}> ✓</span>
-                    )}
+                    )}*/}
                   </div>
                 </div>
               )}
