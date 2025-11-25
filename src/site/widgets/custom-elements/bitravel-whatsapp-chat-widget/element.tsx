@@ -185,16 +185,18 @@ const CustomElement: FC<Props> = ({ conversations }) => {
 
   const styles = {
     container: {
-      fontFamily:
-        '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif',
+      fontFamily: '"Nunito Sans", sans-serif',
+      // fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif',
       // background: "#e5ddd5",
       background: "#F6F2EA",
       display: "flex",
       justifyContent: "center",
       alignItems: "flex-start",
+      // height: "500px",
+      // maxHeight: "500px",
       minHeight: "80vh",
       // padding: "20px",
-      borderRadius: "15px",
+      borderRadius: "10px",
       border: "1px solid #C2C2C2",
     },
     chatContainer: {
@@ -203,7 +205,7 @@ const CustomElement: FC<Props> = ({ conversations }) => {
       // background: "white",
       borderRadius: "8px",
       // boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-      overflow: "hidden",
+      overflow: "auto",
     },
     header: {
       // background: "#f0f0f0",
@@ -211,7 +213,7 @@ const CustomElement: FC<Props> = ({ conversations }) => {
       display: "flex",
       alignItems: "flex-start",
       justifyContent: "space-between",
-      borderBottom: "1px solid #ddd",
+      borderBottom: "4px solid #505451",
     },
     headerLeft: {
       display: "flex",
@@ -273,7 +275,8 @@ const CustomElement: FC<Props> = ({ conversations }) => {
       cursor: "pointer",
     },
     messagesContainer: {
-      padding: "10px",
+      padding: "10px 10px 0px 10px",
+      // paddingBottom: "10px",
       height: "400px",
       overflowY: "auto",
       // background: "#f5f5f5",
@@ -302,6 +305,7 @@ const CustomElement: FC<Props> = ({ conversations }) => {
       height: "36px",
       borderRadius: "50%",
       objectFit: "cover",
+      boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
     },
     messageContent: {
       maxWidth: "75%",
@@ -315,6 +319,7 @@ const CustomElement: FC<Props> = ({ conversations }) => {
       wordWrap: "break-word",
       whiteSpace: "pre-wrap",
       overflowWrap: "break-word",
+      boxShadow: "0 0 1px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.25)",
     },
     messageBubbleSent: {
       padding: "10px 14px",
@@ -325,11 +330,12 @@ const CustomElement: FC<Props> = ({ conversations }) => {
       wordWrap: "break-word",
       whiteSpace: "pre-wrap",
       overflowWrap: "break-word",
+      boxShadow: "0 0 1px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.25)",
     },
     messageTime: {
-      fontSize: "11px",
+      fontSize: "9px",
       color: "#999",
-      marginTop: "4px",
+      marginTop: "3px",
     },
     menuDots: {
       width: "36px",
@@ -344,24 +350,26 @@ const CustomElement: FC<Props> = ({ conversations }) => {
       cursor: "pointer",
     },
     inputContainer: {
-      background: "white",
+      background: "#F6F2EA",
       padding: "10px",
-      borderTop: "1px solid #e0e0e0",
+      borderTop: "2px solid #9da29eff",
     },
     inputLabel: {
-      fontSize: "12px",
-      color: "#666",
+      fontSize: "14px",
+      fontWeight: "600",
+      color: "#505451",
       marginBottom: "8px",
       display: "block",
     },
     input: {
       flex: 1,
       padding: "12px 10px",
-      border: "1px solid #ddd",
-      borderRadius: "22px",
+      border: "1px solid #757575",
+      borderRadius: "5px",
       fontSize: "14px",
       outline: "none",
       width: "100%",
+      height: "80px",
     },
     inputFooter: {
       display: "flex",
@@ -369,13 +377,25 @@ const CustomElement: FC<Props> = ({ conversations }) => {
       alignItems: "center",
       marginTop: "8px",
     },
+    senderType: {
+      display: "flex",
+      justifyContent: "flex-start",
+      alignItems: "center",
+      // marginTop: "8px",
+      width: "100%",
+    },
+    senderTypeText: {
+      marginLeft: "10px",
+      fontSize: "14px",
+      color: "#A5A9A6",
+    },
     sendBtn: {
-      background: "#e91e63",
+      background: "#FF3BAF",
       color: "white",
-      border: "none",
+      border: "1px solid black",
       padding: "10px 20px",
-      borderRadius: "20px",
-      fontSize: "13px",
+      borderRadius: "5px",
+      fontSize: "14px",
       fontWeight: "600",
       cursor: "pointer",
       display: "flex",
@@ -384,6 +404,7 @@ const CustomElement: FC<Props> = ({ conversations }) => {
     },
     statusIndicator: {
       display: "flex",
+      justifyContent: "center",
       alignItems: "center",
       gap: "8px",
       fontSize: "12px",
@@ -457,17 +478,17 @@ const CustomElement: FC<Props> = ({ conversations }) => {
                     }
                   >
                     {message.text}
-                  </div>
-                  <div
-                    style={{
-                      ...styles.messageTime,
-                      textAlign: message.type === "sent" ? "right" : "left",
-                    }}
-                  >
-                    {formatDate(message.timestamp)}
-                    {/*{message.type === "sent" && (
+                    <div
+                      style={{
+                        ...styles.messageTime,
+                        textAlign: message.type === "sent" ? "right" : "left",
+                      }}
+                    >
+                      {formatDate(message.timestamp)}
+                      {/*{message.type === "sent" && (
                       <span style={{ color: "#4fc3f7" }}> ✓</span>
                     )}*/}
+                    </div>
                   </div>
                 </div>
               )}
@@ -477,20 +498,35 @@ const CustomElement: FC<Props> = ({ conversations }) => {
 
         <div style={styles.inputContainer}>
           <label style={styles.inputLabel}>AI Message</label>
-          <input
-            type="text"
+          <textarea
+            // type="text"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
-            placeholder="Would you like to book this flight?"
+            placeholder="Add your message here..."
             style={styles.input}
           />
           <div style={styles.inputFooter}>
             <button onClick={handleSend} style={styles.sendBtn}>
-              SEND <span>⊙</span>
+              SEND{" "}
+              {/* <span>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                  <path d="M566.6 342.6C579.1 330.1 579.1 309.8 566.6 297.3L406.6 137.3C394.1 124.8 373.8 124.8 361.3 137.3C348.8 149.8 348.8 170.1 361.3 182.6L466.7 288L96 288C78.3 288 64 302.3 64 320C64 337.7 78.3 352 96 352L466.7 352L361.3 457.4C348.8 469.9 348.8 490.2 361.3 502.7C373.8 515.2 394.1 515.2 406.6 502.7L566.6 342.7z" />
+                </svg>
+              </span> */}
             </button>
+            <div style={styles.senderType}>
+              <span style={styles.senderTypeText}>AI</span>
+            </div>
             <div style={styles.statusIndicator}>
-              <span>AI</span>
-              <div style={styles.statusDot}>✓</div>
+              {/* <div style={styles.statusDot}>✓</div> */}
+              <div className="toggleSwitch">
+                <input type="checkbox" id="switch" />
+                <label for="switch">Toggle</label>
+              </div>
+              {/* <div>
+                {" "}
+                <input type="checkbox" name="" id="" />
+              </div> */}
               <span>Active</span>
             </div>
           </div>
