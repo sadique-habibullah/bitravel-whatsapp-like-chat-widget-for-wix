@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import reactToWebComponent from "react-to-webcomponent";
 import ChatSkeleton from "./components/ChatSkeleton/ChatSkeleton";
 // import styles from './element.module.css';
+import "./style.css";
 interface Props {
   // displayName?: string;
   conversations?: string;
@@ -186,26 +187,29 @@ const CustomElement: FC<Props> = ({ conversations }) => {
     container: {
       fontFamily:
         '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif',
-      background: "#e5ddd5",
+      // background: "#e5ddd5",
+      background: "#F6F2EA",
       display: "flex",
       justifyContent: "center",
       alignItems: "flex-start",
       minHeight: "80vh",
-      padding: "20px",
+      // padding: "20px",
+      borderRadius: "15px",
+      border: "1px solid #C2C2C2",
     },
     chatContainer: {
       width: "100%",
-      maxWidth: "360px",
-      background: "white",
+      // maxWidth: "360px",
+      // background: "white",
       borderRadius: "8px",
-      boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+      // boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
       overflow: "hidden",
     },
     header: {
-      background: "#f0f0f0",
-      padding: "12px 16px",
+      // background: "#f0f0f0",
+      padding: "12px 10px",
       display: "flex",
-      alignItems: "center",
+      alignItems: "flex-start",
       justifyContent: "space-between",
       borderBottom: "1px solid #ddd",
     },
@@ -215,16 +219,29 @@ const CustomElement: FC<Props> = ({ conversations }) => {
       gap: "12px",
     },
     avatar: {
-      width: "40px",
-      height: "40px",
+      width: "max-content",
+      height: "max-content",
       borderRadius: "50%",
       background: "#ccc",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      fontSize: "18px",
-      color: "white",
-      fontWeight: "600",
+      border: "1px solid #ccc",
+      boxShadow: "0 4px 10px rgba(0, 0, 0, 0.15)",
+      // fontSize: "18px",
+      // color: "white",
+      // fontWeight: "600",
+    },
+    photo: {
+      width: "60px",
+      height: "60px",
+      borderRadius: "50%",
+      objectFit: "cover",
+    },
+    headerTextContainer: {
+      display: "flex",
+      flexDirection: "column",
+      gap: "3px",
     },
     headerTitle: {
       fontSize: "15px",
@@ -232,39 +249,44 @@ const CustomElement: FC<Props> = ({ conversations }) => {
       color: "#000",
       marginBottom: "2px",
     },
+    headerTitle2ndPart: {
+      fontWeight: "400",
+    },
     headerSubtitle: {
       fontSize: "12px",
-      color: "#666",
+      color: "#000000",
     },
     sessionInfo: {
-      fontSize: "11px",
-      color: "#0066cc",
+      fontSize: "12px",
+      color: "#0082FF",
+      fontWeight: "500",
       marginTop: "2px",
     },
     closeBtn: {
       width: "24px",
       height: "24px",
       border: "none",
-      background: "none",
+      borderRadius: "50%",
+      background: "white",
       fontSize: "20px",
       color: "#666",
       cursor: "pointer",
     },
     messagesContainer: {
-      padding: "16px",
+      padding: "10px",
       height: "400px",
       overflowY: "auto",
-      background: "#f5f5f5",
+      // background: "#f5f5f5",
     },
     message: {
       display: "flex",
       gap: "10px",
-      marginBottom: "16px",
+      marginBottom: "10px",
     },
     messageSent: {
       display: "flex",
       gap: "10px",
-      marginBottom: "16px",
+      marginBottom: "10px",
       flexDirection: "row-reverse",
     },
     messageAvatar: {
@@ -274,7 +296,8 @@ const CustomElement: FC<Props> = ({ conversations }) => {
       background: "#ccc",
       flexShrink: 0,
     },
-    photo: {
+
+    participantPhoto: {
       width: "36px",
       height: "36px",
       borderRadius: "50%",
@@ -312,7 +335,7 @@ const CustomElement: FC<Props> = ({ conversations }) => {
       width: "36px",
       height: "36px",
       borderRadius: "50%",
-      background: "#f0f0f0",
+      // background: "#f0f0f0",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -322,7 +345,7 @@ const CustomElement: FC<Props> = ({ conversations }) => {
     },
     inputContainer: {
       background: "white",
-      padding: "16px",
+      padding: "10px",
       borderTop: "1px solid #e0e0e0",
     },
     inputLabel: {
@@ -333,7 +356,7 @@ const CustomElement: FC<Props> = ({ conversations }) => {
     },
     input: {
       flex: 1,
-      padding: "12px 16px",
+      padding: "12px 10px",
       border: "1px solid #ddd",
       borderRadius: "22px",
       fontSize: "14px",
@@ -381,7 +404,7 @@ const CustomElement: FC<Props> = ({ conversations }) => {
 
   return (
     <div style={styles.container}>
-      <div style={styles.chatContainer}>
+      <div className="custom-scroll" style={styles.chatContainer}>
         <div style={styles.header}>
           <div style={styles.headerLeft}>
             <div style={styles.avatar}>
@@ -391,12 +414,15 @@ const CustomElement: FC<Props> = ({ conversations }) => {
                 alt="customer photo"
               />
             </div>
-            <div>
-              <h3 style={styles.headerTitle}>{first_name}</h3>
+            <div style={styles.headerTextContainer}>
+              <p style={styles.headerTitle}>
+                {first_name} |{" "}
+                <span style={styles.headerTitle2ndPart}>Amdocs</span>
+              </p>
               <p style={styles.headerSubtitle}>
                 {chat.length} Messages in the past 7 days
               </p>
-              <div style={styles.sessionInfo}>Session started ⓘ</div>
+              <p style={styles.sessionInfo}>Session started ⓘ</p>
             </div>
           </div>
           <button style={styles.closeBtn}>×</button>
@@ -413,7 +439,7 @@ const CustomElement: FC<Props> = ({ conversations }) => {
             >
               <div style={styles.messageAvatar}>
                 <img
-                  style={styles.photo}
+                  style={styles.participantPhoto}
                   src={message.type === "sent" ? customerPhoto : agentPicture}
                   alt="customer photo"
                 />
