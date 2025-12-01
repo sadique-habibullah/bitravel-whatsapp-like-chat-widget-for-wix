@@ -4,6 +4,8 @@ import reactToWebComponent from "react-to-webcomponent";
 import ChatSkeleton from "./components/ChatSkeleton/ChatSkeleton";
 // import styles from './element.module.css';
 import "./style.css";
+import styles from "./elementStyles";
+
 interface Props {
   // displayName?: string;
   conversations?: string;
@@ -128,6 +130,7 @@ const CustomElement: FC<Props> = ({ conversations }) => {
     conversations: chat,
     customerPhoto,
     agentPicture,
+    assistantPicture,
   } = JSON.parse(conversationData);
 
   // console.log("👉👉👉👉", assistant_name, first_name, chat, agentPicture);
@@ -183,246 +186,6 @@ const CustomElement: FC<Props> = ({ conversations }) => {
 
   // const [inputValue, setInputValue] = useState("");
 
-  const styles = {
-    container: {
-      fontFamily: '"Nunito Sans", sans-serif',
-      // fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif',
-      // background: "#e5ddd5",
-      background: "#F6F2EA",
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "flex-start",
-      // height: "500px",
-      // maxHeight: "500px",
-      minHeight: "80vh",
-      // padding: "20px",
-      borderRadius: "10px",
-      border: "1px solid #C2C2C2",
-    },
-    chatContainer: {
-      width: "100%",
-      // maxWidth: "360px",
-      // background: "white",
-      borderRadius: "8px",
-      // boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-      overflow: "auto",
-    },
-    header: {
-      // background: "#f0f0f0",
-      padding: "12px 10px",
-      display: "flex",
-      alignItems: "flex-start",
-      justifyContent: "space-between",
-      borderBottom: "4px solid #505451",
-    },
-    headerLeft: {
-      display: "flex",
-      alignItems: "center",
-      gap: "12px",
-    },
-    avatar: {
-      width: "max-content",
-      height: "max-content",
-      borderRadius: "50%",
-      background: "#ccc",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      border: "1px solid #ccc",
-      boxShadow: "0 4px 10px rgba(0, 0, 0, 0.15)",
-      // fontSize: "18px",
-      // color: "white",
-      // fontWeight: "600",
-    },
-    photo: {
-      width: "60px",
-      height: "60px",
-      borderRadius: "50%",
-      objectFit: "cover",
-    },
-    headerTextContainer: {
-      display: "flex",
-      flexDirection: "column",
-      gap: "3px",
-    },
-    headerTitle: {
-      fontSize: "15px",
-      fontWeight: "600",
-      color: "#000",
-      marginBottom: "2px",
-    },
-    headerTitle2ndPart: {
-      fontWeight: "400",
-    },
-    headerSubtitle: {
-      fontSize: "12px",
-      color: "#000000",
-    },
-    sessionInfo: {
-      fontSize: "12px",
-      color: "#0082FF",
-      fontWeight: "500",
-      marginTop: "2px",
-    },
-    closeBtn: {
-      width: "24px",
-      height: "24px",
-      border: "none",
-      borderRadius: "50%",
-      background: "white",
-      fontSize: "20px",
-      color: "#666",
-      cursor: "pointer",
-    },
-    messagesContainer: {
-      padding: "10px 10px 0px 10px",
-      // paddingBottom: "10px",
-      height: "400px",
-      overflowY: "auto",
-      // background: "#f5f5f5",
-    },
-    message: {
-      display: "flex",
-      gap: "10px",
-      marginBottom: "10px",
-    },
-    messageSent: {
-      display: "flex",
-      gap: "10px",
-      marginBottom: "10px",
-      flexDirection: "row-reverse",
-    },
-    messageAvatar: {
-      width: "36px",
-      height: "36px",
-      borderRadius: "50%",
-      background: "#ccc",
-      flexShrink: 0,
-    },
-
-    participantPhoto: {
-      width: "36px",
-      height: "36px",
-      borderRadius: "50%",
-      objectFit: "cover",
-      boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
-    },
-    messageContent: {
-      maxWidth: "75%",
-    },
-    messageBubbleReceived: {
-      padding: "10px 14px",
-      borderRadius: "0 8px 8px 8px",
-      fontSize: "14px",
-      lineHeight: "1.4",
-      background: "white",
-      wordWrap: "break-word",
-      whiteSpace: "pre-wrap",
-      overflowWrap: "break-word",
-      boxShadow: "0 0 1px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.25)",
-    },
-    messageBubbleSent: {
-      padding: "10px 14px",
-      borderRadius: "8px 0 8px 8px",
-      fontSize: "14px",
-      lineHeight: "1.4",
-      background: "#dcf8c6",
-      wordWrap: "break-word",
-      whiteSpace: "pre-wrap",
-      overflowWrap: "break-word",
-      boxShadow: "0 0 1px rgba(0, 0, 0, 0.25), 0 1px 2px rgba(0, 0, 0, 0.25)",
-    },
-    messageTime: {
-      fontSize: "9px",
-      color: "#999",
-      marginTop: "3px",
-    },
-    menuDots: {
-      width: "36px",
-      height: "36px",
-      borderRadius: "50%",
-      // background: "#f0f0f0",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      color: "#666",
-      fontSize: "20px",
-      cursor: "pointer",
-    },
-    inputContainer: {
-      background: "#F6F2EA",
-      padding: "10px",
-      borderTop: "2px solid #9da29eff",
-    },
-    inputLabel: {
-      fontSize: "14px",
-      fontWeight: "600",
-      color: "#505451",
-      marginBottom: "8px",
-      display: "block",
-    },
-    input: {
-      flex: 1,
-      padding: "12px 10px",
-      border: "1px solid #757575",
-      borderRadius: "5px",
-      fontSize: "14px",
-      outline: "none",
-      width: "100%",
-      height: "80px",
-    },
-    inputFooter: {
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      marginTop: "8px",
-    },
-    senderType: {
-      display: "flex",
-      justifyContent: "flex-start",
-      alignItems: "center",
-      // marginTop: "8px",
-      width: "100%",
-    },
-    senderTypeText: {
-      marginLeft: "10px",
-      fontSize: "14px",
-      color: "#A5A9A6",
-    },
-    sendBtn: {
-      background: "#FF3BAF",
-      color: "white",
-      border: "1px solid black",
-      padding: "10px 20px",
-      borderRadius: "5px",
-      fontSize: "14px",
-      fontWeight: "600",
-      cursor: "pointer",
-      display: "flex",
-      alignItems: "center",
-      gap: "6px",
-    },
-    statusIndicator: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-      gap: "8px",
-      fontSize: "12px",
-      color: "#666",
-    },
-    statusDot: {
-      width: "20px",
-      height: "20px",
-      borderRadius: "50%",
-      border: "2px solid #e91e63",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      color: "#e91e63",
-      fontSize: "12px",
-    },
-  };
-
   return (
     <div style={styles.container}>
       <div className="custom-scroll" style={styles.chatContainer}>
@@ -461,7 +224,9 @@ const CustomElement: FC<Props> = ({ conversations }) => {
               <div style={styles.messageAvatar}>
                 <img
                   style={styles.participantPhoto}
-                  src={message.type === "sent" ? customerPhoto : agentPicture}
+                  src={
+                    message.type === "sent" ? customerPhoto : assistantPicture
+                  }
                   alt="customer photo"
                 />
               </div>

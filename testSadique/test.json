@@ -1,0 +1,19 @@
+{
+    "nodes": [
+        {
+            "type": "HEADING",
+            "id": "4xexz52",
+            "nodes": [
+                {
+                    "type": "TEXT",
+                    "textData": {
+                        "text": "By ML. Photo(s)/[Main Company Name]"
+                    }
+                }
+            ],
+            "headingData": {
+                "level": 3
+            }
+        }
+    ]
+}

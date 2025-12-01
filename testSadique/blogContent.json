@@ -1,0 +1,101 @@
+{
+    "title": "Cartier Flagship Store Opens in Miami Design District",
+    "excerpt": "Cartier unveils its newly renovated regional flagship in Miami, offering a unique and immersive experience.",
+    "richContent": {
+        "nodes": [
+            {
+                "type": "PARAGRAPH",
+                "id": "intro1",
+                "nodes": [
+                    {
+                        "type": "TEXT",
+                        "textData": {
+                            "text": "Cartier has opened its newly renovated regional flagship store in the Miami Design District. Designed in collaboration with renowned architect Liz Diller and interior designer Laura Gonzalez, the boutique offers an artistic and supernatural oasis inspired by Miami's rich cultural heritage and landscapes."
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "PARAGRAPH",
+                "id": "headline1",
+                "nodes": [
+                    {
+                        "type": "TEXT",
+                        "id": "",
+                        "textData": {
+                            "text": "Store Features",
+                            "decorations": [
+                                {
+                                    "type": "BOLD",
+                                    "fontWeightValue": 700
+                                }
+                            ]
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "PARAGRAPH",
+                "id": "feature1",
+                "nodes": [
+                    {
+                        "type": "TEXT",
+                        "textData": {
+                            "text": "Inside the vibrant space, visitors will embark on a journey into the world of Cartier's unique creations. From joyful artistic displays to creative set-ups, the store is designed to enthrall and captivate."
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "PARAGRAPH",
+                "id": "cta1",
+                "nodes": [
+                    {
+                        "type": "TEXT",
+                        "textData": {
+                            "text": "To explore more, "
+                        }
+                    },
+                    {
+                        "type": "TEXT",
+                        "textData": {
+                            "text": "visit the Cartier boutique",
+                            "decorations": [
+                                {
+                                    "type": "ANCHOR",
+                                    "anchorData": {
+                                        "anchor": "cartier-boutique"
+                                    }
+                                },
+                                {
+                                    "type": "UNDERLINE"
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "type": "TEXT",
+                        "textData": {
+                            "text": " located at 147 NE 39th St, Miami, FL 33137."
+                        }
+                    }
+                ]
+            },
+            {
+                "type": "HEADING",
+                "id": "byline1",
+                "nodes": [
+                    {
+                        "type": "TEXT",
+                        "textData": {
+                            "text": "By ML. Photo(s)/Cartier"
+                        }
+                    }
+                ],
+                "headingData": {
+                    "level": 3
+                }
+            }
+        ]
+    }
+}

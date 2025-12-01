@@ -1,0 +1,360 @@
+[
+    {
+        "type": "PARAGRAPH",
+        "id": "p1",
+        "nodes": [
+            {
+                "type": "TEXT",
+                "id": "t1",
+                "textData": {
+                    "text": "Art in Public Places of the Miami-Dade County Department of Cultural Affairs will host a free public art reveal and tour at the new Osvaldo N. Soto Miami-Dade Justice Center in Downtown Miami on Saturday, December 6, 2025, from 9:30 a.m. to 11:00 a.m. The event will introduce new site-specific commissions, exhibitions and art acquisitions at the iconic new courthouse while serving as the final Miami Emerging Arts Leaders event of 2025 and commemorating the program’s 20th anniversary."
+                }
+            }
+        ]
+    },
+    {
+        "type": "IMAGE",
+        "id": "Oa5vhXex97",
+        "imageData": {
+            "containerData": {
+                "width": {
+                    "size": "CONTENT"
+                },
+                "alignment": "CENTER",
+                "textWrap": true
+            },
+            "image": {
+                "src": {
+                    "id": "https://static.wixstatic.com/media/691254_c27095003a6146b9850d95b26824a26c~mv2.png"
+                }
+            }
+        }
+    },
+    {
+        "type": "PARAGRAPH",
+        "id": "p2",
+        "nodes": [
+            {
+                "type": "TEXT",
+                "id": "t2",
+                "textData": {
+                    "text": "Event Overview",
+                    "decorations": [
+                        {
+                            "type": "BOLD",
+                            "fontWeightValue": 700
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "type": "PARAGRAPH",
+        "id": "p3",
+        "nodes": [
+            {
+                "type": "TEXT",
+                "id": "t3",
+                "textData": {
+                    "text": "The public art reveal and tour will take place at the Osvaldo N. Soto Miami-Dade Justice Center, located at 20 NW 1st Avenue, Miami, FL 33128. Attendees will experience new monumental and integrated public artworks that have been commissioned specifically for the building as part of the County’s Art in Public Places program."
+                }
+            }
+        ]
+    },
+    {
+        "type": "PARAGRAPH",
+        "id": "p4",
+        "nodes": [
+            {
+                "type": "TEXT",
+                "id": "t4",
+                "textData": {
+                    "text": "New site-specific commissions featured on the tour include works by artists Loriel Beltrán, Edouard Duval-Carrié, Loni Johnson, Karen Rifas, Morel Doucet, Beverly Acha, Tomm El-Saieh, Philip Smith, Jennifer Basile, Onajide Shabaka, Laura Tanner and others. In addition to these commissions, the tour will highlight 90 additional art acquisitions installed throughout the facility."
+                }
+            }
+        ]
+    },
+    {
+        "type": "PARAGRAPH",
+        "id": "p5",
+        "nodes": [
+            {
+                "type": "TEXT",
+                "id": "t5",
+                "textData": {
+                    "text": "The program is part of the Official Event Program for Art Basel Miami Beach, underscoring the Justice Center’s role as a new cultural and civic landmark within Miami-Dade County’s public art collection."
+                }
+            }
+        ]
+    },
+    {
+        "type": "PARAGRAPH",
+        "id": "p6",
+        "nodes": [
+            {
+                "type": "TEXT",
+                "id": "t6",
+                "textData": {
+                    "text": "Registration and Access",
+                    "decorations": [
+                        {
+                            "type": "BOLD",
+                            "fontWeightValue": 700
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "type": "PARAGRAPH",
+        "id": "p7",
+        "nodes": [
+            {
+                "type": "TEXT",
+                "id": "t7a",
+                "textData": {
+                    "text": "The tour is free to attend, but space is limited and advance RSVP is required. Interested participants can "
+                }
+            },
+            {
+                "type": "TEXT",
+                "id": "t7b",
+                "textData": {
+                    "text": "register online",
+                    "decorations": [
+                        {
+                            "type": "LINK",
+                            "linkData": {
+                                "link": {
+                                    "url": "https://www.eventbrite.com/e/public-art-reveal-osvaldo-n-soto-miami-dade-justice-center-tickets-1636827468019",
+                                    "target": "BLANK",
+                                    "rel": {
+                                        "noreferrer": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "type": "UNDERLINE"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "TEXT",
+                "id": "t7c",
+                "textData": {
+                    "text": " to secure a spot."
+                }
+            }
+        ]
+    },
+    {
+        "type": "PARAGRAPH",
+        "id": "p8",
+        "nodes": [
+            {
+                "type": "TEXT",
+                "id": "t8",
+                "textData": {
+                    "text": "Parking fees will apply for those arriving by car. The Justice Center is also accessible via Miami-Dade public transit, including the Government Center Metrorail stop, offering convenient access for attendees traveling by rail."
+                }
+            }
+        ]
+    },
+    {
+        "type": "PARAGRAPH",
+        "id": "p9",
+        "nodes": [
+            {
+                "type": "TEXT",
+                "id": "t9",
+                "textData": {
+                    "text": "Public Art in Miami-Dade",
+                    "decorations": [
+                        {
+                            "type": "BOLD",
+                            "fontWeightValue": 700
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "type": "PARAGRAPH",
+        "id": "p10",
+        "nodes": [
+            {
+                "type": "TEXT",
+                "id": "t10a",
+                "textData": {
+                    "text": "Art in Public Places, a program of the Miami-Dade County Department of Cultural Affairs, administers the County’s collection of site-specific commissions and acquisitions that integrate art into public buildings and spaces. The new works at the Osvaldo N. Soto Miami-Dade Justice Center expand this collection and reflect the role of public art in shaping Miami-Dade’s built environment and civic identity. More information about the program and its projects is available at "
+                }
+            },
+            {
+                "type": "TEXT",
+                "id": "t10b",
+                "textData": {
+                    "text": "miamidadepublicart.org",
+                    "decorations": [
+                        {
+                            "type": "LINK",
+                            "linkData": {
+                                "link": {
+                                    "url": "https://www.miamidadepublicart.org",
+                                    "target": "BLANK",
+                                    "rel": {
+                                        "noreferrer": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "type": "UNDERLINE"
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "type": "PARAGRAPH",
+        "id": "p11",
+        "nodes": [
+            {
+                "type": "TEXT",
+                "id": "t11",
+                "textData": {
+                    "text": "Emerging Arts Leaders Milestone",
+                    "decorations": [
+                        {
+                            "type": "BOLD",
+                            "fontWeightValue": 700
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "type": "PARAGRAPH",
+        "id": "p12",
+        "nodes": [
+            {
+                "type": "TEXT",
+                "id": "t12",
+                "textData": {
+                    "text": "The event marks the final gathering of the Miami Emerging Arts Leaders (MEAL) program for 2025 and celebrates its 20th anniversary. Launched in 2004, Miami Emerging Arts Leaders is an initiative of the Miami-Dade County Department of Cultural Affairs designed to identify and cultivate the next generation of diverse arts leaders in the community."
+                }
+            }
+        ]
+    },
+    {
+        "type": "PARAGRAPH",
+        "id": "p13",
+        "nodes": [
+            {
+                "type": "TEXT",
+                "id": "t13",
+                "textData": {
+                    "text": "The program offers networking and resource-sharing opportunities for diverse, young and new arts administrators, encouraging them to explore professional development issues and opportunities across the sector. All arts professionals are welcome to participate, and the initiative is supported by the Arts and Business Council of Miami and the Greater Miami Convention and Visitors Bureau."
+                }
+            }
+        ]
+    },
+    {
+        "type": "PARAGRAPH",
+        "id": "p14",
+        "nodes": [
+            {
+                "type": "TEXT",
+                "id": "t14a",
+                "textData": {
+                    "text": "Those interested in learning more about Miami Emerging Arts Leaders and other programs of the Miami-Dade County Department of Cultural Affairs can subscribe to the department’s email newsletter at "
+                }
+            },
+            {
+                "type": "TEXT",
+                "id": "t14b",
+                "textData": {
+                    "text": "miamidadearts.org",
+                    "decorations": [
+                        {
+                            "type": "LINK",
+                            "linkData": {
+                                "link": {
+                                    "url": "https://www.miamidadearts.org",
+                                    "target": "BLANK",
+                                    "rel": {
+                                        "noreferrer": true
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "type": "UNDERLINE"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "TEXT",
+                "id": "t14c",
+                "textData": {
+                    "text": "."
+                }
+            }
+        ]
+    },
+    {
+        "type": "PARAGRAPH",
+        "id": "p15",
+        "nodes": [
+            {
+                "type": "TEXT",
+                "id": "t15",
+                "textData": {
+                    "text": "Accessibility and Accommodations",
+                    "decorations": [
+                        {
+                            "type": "BOLD",
+                            "fontWeightValue": 700
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    {
+        "type": "PARAGRAPH",
+        "id": "p16",
+        "nodes": [
+            {
+                "type": "TEXT",
+                "id": "t16",
+                "textData": {
+                    "text": "Miami-Dade County adheres to the requirements of the Americans with Disabilities Act for all Department of Cultural Affairs–sponsored programs and meetings. To request materials in accessible formats, sign language interpreters, CART services or other accommodations to participate in this event, attendees are asked to contact the Miami-Dade County Department of Cultural Affairs at least five days in advance to initiate their request. TTY users may call 711 (Florida Relay Service)."
+                }
+            }
+        ]
+    },
+    {
+        "type": "HEADING",
+        "id": "byline1",
+        "nodes": [
+            {
+                "type": "TEXT",
+                "id": "tby1",
+                "textData": {
+                    "text": "By ML. Photo(s)/Miami-Dade County Department of Cultural Affairs"
+                }
+            }
+        ],
+        "headingData": {
+            "level": 3
+        }
+    }
+]
