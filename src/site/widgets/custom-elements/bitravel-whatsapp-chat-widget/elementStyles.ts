@@ -79,6 +79,12 @@ const styles = {
     fontWeight: "500",
     marginTop: "2px",
   },
+  sessionStateDescription: {
+    fontSize: "12px",
+    // color: "#006",
+    fontWeight: "500",
+    marginTop: "2px",
+  },
   closeBtn: {
     width: "24px",
     height: "24px",

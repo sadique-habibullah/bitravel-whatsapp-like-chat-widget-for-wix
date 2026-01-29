@@ -98,9 +98,32 @@ const CustomElement: FC<Props> = ({ conversations }) => {
   const [inputValue, setInputValue] = useState("");
   // const isFirstRender = useRef(true);
   const removeSessionFromUiButton = useRef(null);
+  const [stateDescriptionCSSDisplayValue, setStateDescriptionCSSDisplayValue] =
+    useState("none");
 
   const handleSend = () => {
     // console.log("Sending message:", inputValue);
+  };
+
+  const handleStatusMouseEnter = () => {
+    console.log("Mouse enter");
+    setStateDescriptionCSSDisplayValue("block");
+  };
+
+  const handleStatusMouseLeave = () => {
+    console.log("Mouse leave");
+    setStateDescriptionCSSDisplayValue("none");
+    console.log("====================================");
+    console.log(stateDescriptionCSSDisplayValue);
+    console.log("====================================");
+  };
+
+  const handleStatusClick = (offerLink) => {
+    console.log("Clicked");
+    if (!offerLink) {
+      return;
+    }
+    window.open(offerLink, "_blank");
   };
 
   const handleRemoveSessionFromUi = (conversationData) => {
@@ -147,6 +170,7 @@ const CustomElement: FC<Props> = ({ conversations }) => {
     assistantPicture,
     state,
     stateDescription,
+    offerLink,
   } = JSON.parse(conversationData);
 
   // console.log("👉👉👉👉", assistantName, firstName, chat, agentPicture);
@@ -230,7 +254,22 @@ const CustomElement: FC<Props> = ({ conversations }) => {
               <p style={styles.headerSubtitle}>
                 {chat.length} Messages in the past 7 days
               </p>
-              <p style={styles.sessionInfo}>{state}</p>
+              <a
+                onClick={() => handleStatusClick(offerLink)}
+                onMouseEnter={handleStatusMouseEnter}
+                onMouseLeave={handleStatusMouseLeave}
+                style={styles.sessionInfo}
+              >
+                {state}
+              </a>
+              <p
+                style={{
+                  display: stateDescriptionCSSDisplayValue,
+                  ...styles.sessionStateDescription,
+                }}
+              >
+                {stateDescription}
+              </p>
             </div>
           </div>
           <button
