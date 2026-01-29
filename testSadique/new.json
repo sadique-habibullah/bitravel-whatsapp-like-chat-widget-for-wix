@@ -1,0 +1,349 @@
+{
+    "nodes": [
+        {
+            "type": "HEADING",
+            "id": "foo",
+            "nodes": [
+                {
+                    "type": "TEXT",
+                    "id": "",
+                    "textData": {
+                        "text": "Wix Ricos"
+                    }
+                }
+            ],
+            "style": {
+                "paddingTop": "0px",
+                "paddingBottom": "0px"
+            },
+            "headingData": {
+                "level": 2,
+                "textStyle": {
+                    "textAlignment": "AUTO",
+                    "lineHeight": "2"
+                }
+            }
+        },
+        {
+            "type": "PARAGRAPH",
+            "id": "lxr936",
+            "style": {
+                "paddingTop": "0px",
+                "paddingBottom": "0px"
+            },
+            "paragraphData": {
+                "textStyle": {
+                    "lineHeight": "2"
+                }
+            }
+        },
+        {
+            "type": "PARAGRAPH",
+            "id": "j7tdj13",
+            "nodes": [
+                {
+                    "type": "TEXT",
+                    "id": "",
+                    "textData": {
+                        "text": "Ricos",
+                        "decorations": [
+                            {
+                                "type": "BOLD",
+                                "fontWeightValue": 700
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "TEXT",
+                    "id": "",
+                    "textData": {
+                        "text": " is a modern "
+                    }
+                },
+                {
+                    "type": "TEXT",
+                    "id": "",
+                    "textData": {
+                        "text": "WYSIWYG",
+                        "decorations": [
+                            {
+                                "type": "ITALIC",
+                                "italicData": true
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "TEXT",
+                    "id": "",
+                    "textData": {
+                        "text": " editor used across "
+                    }
+                },
+                {
+                    "type": "TEXT",
+                    "id": "",
+                    "textData": {
+                        "text": "Wix",
+                        "decorations": [
+                            {
+                                "type": "LINK",
+                                "linkData": {
+                                    "link": {
+                                        "url": "www.wix.com",
+                                        "target": "BLANK",
+                                        "rel": {
+                                            "noreferrer": true
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "type": "UNDERLINE"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "TEXT",
+                    "id": "",
+                    "textData": {
+                        "text": " products to provide "
+                    }
+                },
+                {
+                    "type": "TEXT",
+                    "id": "",
+                    "textData": {
+                        "text": "rich content",
+                        "decorations": [
+                            {
+                                "type": "UNDERLINE"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "TEXT",
+                    "id": "",
+                    "textData": {
+                        "text": " "
+                    }
+                },
+                {
+                    "type": "TEXT",
+                    "id": "",
+                    "textData": {
+                        "text": "creation capabilities",
+                        "decorations": [
+                            {
+                                "type": "COLOR",
+                                "colorData": {
+                                    "background": "#ABCAFF"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "TEXT",
+                    "id": "",
+                    "textData": {
+                        "text": "."
+                    }
+                }
+            ],
+            "style": {
+                "paddingTop": "0px",
+                "paddingBottom": "0px"
+            },
+            "paragraphData": {
+                "textStyle": {
+                    "lineHeight": "2"
+                }
+            }
+        },
+        {
+            "type": "PARAGRAPH",
+            "id": "f4j272663",
+            "style": {
+                "paddingTop": "0px",
+                "paddingBottom": "0px"
+            },
+            "paragraphData": {
+                "textStyle": {
+                    "lineHeight": "2"
+                }
+            }
+        },
+        {
+            "type": "PARAGRAPH",
+            "id": "4qysh2684",
+            "nodes": [
+                {
+                    "type": "TEXT",
+                    "id": "",
+                    "textData": {
+                        "text": "You can find it in:"
+                    }
+                }
+            ],
+            "style": {
+                "paddingTop": "0px",
+                "paddingBottom": "0px"
+            },
+            "paragraphData": {
+                "textStyle": {
+                    "lineHeight": "2"
+                }
+            }
+        },
+        {
+            "type": "BULLETED_LIST",
+            "id": "550vi3491",
+            "nodes": [
+                {
+                    "type": "LIST_ITEM",
+                    "id": "88ejp3492",
+                    "nodes": [
+                        {
+                            "type": "PARAGRAPH",
+                            "id": "dpe283433",
+                            "nodes": [
+                                {
+                                    "type": "TEXT",
+                                    "id": "",
+                                    "textData": {
+                                        "text": "Blog"
+                                    }
+                                }
+                            ],
+                            "style": {
+                                "paddingTop": "0px",
+                                "paddingBottom": "0px"
+                            },
+                            "paragraphData": {
+                                "textStyle": {
+                                    "lineHeight": "2"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "LIST_ITEM",
+                    "id": "b1sb13631",
+                    "nodes": [
+                        {
+                            "type": "PARAGRAPH",
+                            "id": "k53j03632",
+                            "nodes": [
+                                {
+                                    "type": "TEXT",
+                                    "id": "",
+                                    "textData": {
+                                        "text": "CMS"
+                                    }
+                                }
+                            ],
+                            "style": {
+                                "paddingTop": "0px",
+                                "paddingBottom": "0px"
+                            },
+                            "paragraphData": {
+                                "textStyle": {
+                                    "lineHeight": "2"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "LIST_ITEM",
+                    "id": "q79114309",
+                    "nodes": [
+                        {
+                            "type": "PARAGRAPH",
+                            "id": "yef5z4310",
+                            "nodes": [
+                                {
+                                    "type": "TEXT",
+                                    "id": "",
+                                    "textData": {
+                                        "text": "Events"
+                                    }
+                                }
+                            ],
+                            "style": {
+                                "paddingTop": "0px",
+                                "paddingBottom": "0px"
+                            },
+                            "paragraphData": {
+                                "textStyle": {
+                                    "lineHeight": "2"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "LIST_ITEM",
+                    "id": "sgy8f4743",
+                    "nodes": [
+                        {
+                            "type": "PARAGRAPH",
+                            "id": "avfl84744",
+                            "nodes": [
+                                {
+                                    "type": "TEXT",
+                                    "id": "",
+                                    "textData": {
+                                        "text": "and other Wix business solutions"
+                                    }
+                                }
+                            ],
+                            "style": {
+                                "paddingTop": "0px",
+                                "paddingBottom": "0px"
+                            },
+                            "paragraphData": {
+                                "textStyle": {
+                                    "lineHeight": "2"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "PARAGRAPH",
+            "id": "3b77e19"
+        },
+        {
+            "type": "IMAGE",
+            "id": "gt72918",
+            "imageData": {
+                "containerData": {
+                    "width": {
+                        "size": "CONTENT"
+                    },
+                    "alignment": "CENTER",
+                    "textWrap": true
+                },
+                "image": {
+                    "src": {
+                        "id": "2068b1_3b5f544f49464451b4dd5c8210042a29~mv2.png"
+                    },
+                    "width": 696,
+                    "height": 698
+                }
+            }
+        },
+        {
+            "type": "PARAGRAPH",
+            "id": "gy42331"
+        }
+    ]
+}

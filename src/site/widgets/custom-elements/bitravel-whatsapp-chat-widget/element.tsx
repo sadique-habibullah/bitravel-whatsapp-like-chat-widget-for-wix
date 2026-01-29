@@ -97,9 +97,22 @@ const CustomElement: FC<Props> = ({ conversations }) => {
   const [conversationData, setConversationData] = useState(conversations);
   const [inputValue, setInputValue] = useState("");
   // const isFirstRender = useRef(true);
+  const removeSessionFromUiButton = useRef(null);
 
   const handleSend = () => {
     // console.log("Sending message:", inputValue);
+  };
+
+  const handleRemoveSessionFromUi = (conversationData) => {
+    // console.log("cross button Clicked ->", conversationData);
+    const eventDispatchRes = removeSessionFromUiButton.current.dispatchEvent(
+      new CustomEvent("event_removeSessionFromUi", {
+        detail: { sessionId },
+        bubbles: true,
+        composed: true,
+      }),
+    );
+    console.log("eventDispatchRes ->>", eventDispatchRes);
   };
 
   // console.log("data outside of useEffect ->", data);
@@ -125,18 +138,29 @@ const CustomElement: FC<Props> = ({ conversations }) => {
   }
 
   const {
-    assistant_name,
-    first_name,
+    sessionId,
+    assistantName,
+    firstName,
     conversations: chat,
     customerPhoto,
     agentPicture,
     assistantPicture,
+    state,
+    stateDescription,
   } = JSON.parse(conversationData);
 
-  // console.log("👉👉👉👉", assistant_name, first_name, chat, agentPicture);
+  // console.log("👉👉👉👉", assistantName, firstName, chat, agentPicture);
+  console.log("--------start---------");
+  console.log("assistantName", assistantName);
+  console.log("firstName", firstName);
+  console.log("chat", chat);
+  console.log("agentPicture", agentPicture);
+  console.log("state", state);
+  console.log("stateDescription", stateDescription);
+  console.log("--------end---------");
 
   const allConversations = chat.map((item) => {
-    console.log("👉 conversation item ->>", item);
+    // console.log("👉 conversation item ->>", item);
     return [
       {
         id: generateId(item.timestamp, "sent"),
@@ -160,8 +184,8 @@ const CustomElement: FC<Props> = ({ conversations }) => {
   // console.log("newConversations ->", newConversations);
 
   // const data2 = {
-  //   assistant_name: "Bob",
-  //   first_name: "Sadique",
+  //   assistantName: "Bob",
+  //   firstName: "Sadique",
   //   conversation: [
   //     {
   //       user: "I am looking for a flight from Madrid to Tel Aviv on Friday",
@@ -200,16 +224,22 @@ const CustomElement: FC<Props> = ({ conversations }) => {
             </div>
             <div style={styles.headerTextContainer}>
               <p style={styles.headerTitle}>
-                {first_name} |{" "}
+                {firstName} |{" "}
                 <span style={styles.headerTitle2ndPart}>Amdocs</span>
               </p>
               <p style={styles.headerSubtitle}>
                 {chat.length} Messages in the past 7 days
               </p>
-              <p style={styles.sessionInfo}>Session started ⓘ</p>
+              <p style={styles.sessionInfo}>{state}</p>
             </div>
           </div>
-          <button style={styles.closeBtn}>×</button>
+          <button
+            ref={removeSessionFromUiButton}
+            style={styles.closeBtn}
+            onClick={() => handleRemoveSessionFromUi(sessionId)}
+          >
+            ×
+          </button>
         </div>
 
         <div style={styles.messagesContainer}>
@@ -309,7 +339,7 @@ const customElement = reactToWebComponent(
     props: {
       conversations: "string",
     },
-  }
+  },
 );
 
 export default customElement;
