@@ -98,24 +98,21 @@ const CustomElement: FC<Props> = ({ conversations }) => {
   const [inputValue, setInputValue] = useState("");
   // const isFirstRender = useRef(true);
   const removeSessionFromUiButton = useRef(null);
-  const [stateDescriptionCSSDisplayValue, setStateDescriptionCSSDisplayValue] =
-    useState("none");
+  // const [stateDescriptionCSSDisplayValue, setStateDescriptionCSSDisplayValue] =
+  //   useState("none");
+  const [stateDescriptionCSSOpacity, setStateDescriptionCSSOpacity] =
+    useState(0);
 
   const handleSend = () => {
     // console.log("Sending message:", inputValue);
   };
 
   const handleStatusMouseEnter = () => {
-    console.log("Mouse enter");
-    setStateDescriptionCSSDisplayValue("block");
+    setStateDescriptionCSSOpacity(1);
   };
 
   const handleStatusMouseLeave = () => {
-    console.log("Mouse leave");
-    setStateDescriptionCSSDisplayValue("none");
-    console.log("====================================");
-    console.log(stateDescriptionCSSDisplayValue);
-    console.log("====================================");
+    setStateDescriptionCSSOpacity(0);
   };
 
   const handleStatusClick = (offerLink) => {
@@ -171,6 +168,7 @@ const CustomElement: FC<Props> = ({ conversations }) => {
     state,
     stateDescription,
     offerLink,
+    botTyping,
   } = JSON.parse(conversationData);
 
   // console.log("👉👉👉👉", assistantName, firstName, chat, agentPicture);
@@ -181,10 +179,11 @@ const CustomElement: FC<Props> = ({ conversations }) => {
   console.log("agentPicture", agentPicture);
   console.log("state", state);
   console.log("stateDescription", stateDescription);
+  console.log("botTyping", botTyping);
   console.log("--------end---------");
 
   const allConversations = chat.map((item) => {
-    // console.log("👉 conversation item ->>", item);
+    console.log("👉 conversation item ->>", item);
     return [
       {
         id: generateId(item.timestamp, "sent"),
@@ -199,9 +198,19 @@ const CustomElement: FC<Props> = ({ conversations }) => {
           ? concatenateStrings(item.assistant[0].text)
           : concatenateStrings(item.assistant.text), // data format inconsistency
         timestamp: item.timestamp,
+        offerLink: item?.assistant[0]?.html,
       },
     ];
   });
+
+  if (botTyping) {
+    allConversations.push({
+      id: "random string",
+      type: "received",
+      text: "...",
+      timestamp: "",
+    });
+  }
   // console.log("allConversations ->", allConversations);
 
   const newConversations = [].concat(...allConversations);
@@ -258,18 +267,27 @@ const CustomElement: FC<Props> = ({ conversations }) => {
                 onClick={() => handleStatusClick(offerLink)}
                 onMouseEnter={handleStatusMouseEnter}
                 onMouseLeave={handleStatusMouseLeave}
-                style={styles.sessionInfo}
+                style={{ ...styles.sessionInfo, position: "relative" }}
               >
                 {state}
+                <span
+                  style={{
+                    // display: stateDescriptionCSSDisplayValue,
+                    opacity: stateDescriptionCSSOpacity,
+                    ...styles.sessionStateDescription,
+                  }}
+                >
+                  {stateDescription}
+                </span>
               </a>
-              <p
+              {/* <p
                 style={{
                   display: stateDescriptionCSSDisplayValue,
                   ...styles.sessionStateDescription,
                 }}
               >
                 {stateDescription}
-              </p>
+              </p> */}
             </div>
           </div>
           <button
@@ -312,6 +330,12 @@ const CustomElement: FC<Props> = ({ conversations }) => {
                     }
                   >
                     {message.text}
+                    {`\n`}
+                    {message.offerLink && (
+                      <a href={message.offerLink} target="_blank">
+                        {message.offerLink}
+                      </a>
+                    )}
                     <div
                       style={{
                         ...styles.messageTime,
